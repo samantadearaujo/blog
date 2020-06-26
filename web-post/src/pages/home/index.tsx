@@ -33,6 +33,12 @@ const Home = () => {
     let authors = authorService.getAllAuthorService();
     let authorId = -1
 
+
+    useEffect(() => {
+        const orderBy = _initial.sort((a, b) => b.publishedAt - a.publishedAt)
+         setItemsInitial(orderBy);   
+    }, [authors]);
+
     
     //Select post by Author
     function handleSelectAuthor(event: ChangeEvent<HTMLSelectElement>) {

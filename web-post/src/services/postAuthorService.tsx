@@ -25,24 +25,26 @@ export class PostAuthorService {
         let posts = postRepository.getAllPostsRepository();
         let arr: Array<PostAuthorModel> = [];
 
-        posts.map(item => {
-            authors.map(author => {
-                if (item.metadata.authorId === author.id) {
-                    let pTeste = new  PostAuthorModel(
-                        item.title,
-                        item.body,
-                        item.metadata.publishedAt,
-                        author.name,
-                        author.id
-                    );
-                    arr.push(pTeste);
-                    
+        useEffect(() => {
+            posts.map(item => {
+                authors.map(author => {
+                    if (item.metadata.authorId === author.id) {
+                        let pTeste = new PostAuthorModel(
+                            item.title,
+                            item.body,
+                            item.metadata.publishedAt,
+                            author.name,
+                            author.id
+                        );
+                        arr.push(pTeste);
 
-                }
-            })
-        });
+
+                    }
+                })
+            });
+        }, [arr]);
+
         return arr;
-
     }
 
 }
