@@ -14,7 +14,8 @@
 :rocket: Tecnologia 
 ReactJS - TypeScript 
 
-:construction_worker: Dificuldade:
+:construction_worker: Dificuldade
+
 Em 2015 a 2017, trabalhei no projeto da HP, com o AngularJS. Depois 
 disso vim para Portugal, e até em então estou só trabalhando com o 
 WindowsForm (apenas em BackEnd C#). 
@@ -27,7 +28,8 @@ e Services), mas sei que precisa ser mais estruturado.
 E pela primeira fiz o uso Jest, para testes. Mesmo aplicando o teste apenas a uma função. 
 
 
-:green_heart:
+:green_heart
+
 Desafios, provas e testes foram feitos para medir o seu nível, 
 e sinceramente é adoro. 
 
@@ -39,7 +41,7 @@ repositories - Neste modulo coloquei o get para api externa.
 services -Já neste modulo é a união daos repositorios Posts e  Autores.
 pages/home - Apresentação da tela
 
-
+```
 web-post
 ├─ TODO
 ├─ dist
