@@ -5,9 +5,8 @@ import axios from 'axios';
 import { POST_URL } from '../consts/api';
 
 //::Interface
-import { Author } from '../interfaces/author';
+//::Interfaces
 import { Post } from 'src/interfaces/post';
-import PostAuthorModel from 'src/models/postAuthorModel';
 
 export class PostRepository {
 

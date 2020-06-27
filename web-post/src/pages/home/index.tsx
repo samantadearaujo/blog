@@ -22,38 +22,42 @@ import PostAuthorModel from 'src/models/postAuthorModel';
 
 const Home = () => {
 
-    const [selectedAuthor] = useState();
-    const [publish, setPublish] = useState("");
-    let [itemsInitial, setItemsInitial] = useState<postAuthorModel[]>([]);
-    const postAuthorService = new PostAuthorService();
-    const _initial = postAuthorService.getAllPostAuthorService();
-    let posts = _initial;
-
+    //::Instance Services
     const authorService = new AuthorService();
-    let authors = authorService.getAllAuthorService();
+    const postAuthorService = new PostAuthorService();
+
+    const [selectedAuthor] = useState();
+    const [publish, setPublish] = useState("");    
+   
+    const _initial = postAuthorService.getAllPostAuthorService();
+    const authors = authorService.getAllAuthorService();
+
+    let [itemsInitial, setItemsInitial] = useState<postAuthorModel[]>([]);
+    let posts = _initial;  
+    
     let authorId = -1
 
-
+    //:: Why use this? Onload Page informations 
     useEffect(() => {
         const orderBy = _initial.sort((a, b) => b.publishedAt - a.publishedAt)
          setItemsInitial(orderBy);   
     }, [authors]);
 
     
-    //Select post by Author
+    //::Select post by Author
     function handleSelectAuthor(event: ChangeEvent<HTMLSelectElement>) {
         authorId = parseInt(event.target.value);
         if (authorId > 0) {
             let filterItems = _initial;
             filterItems = filterItems.filter(item => item.authorID === authorId);
-            posts = filterItems;
+            posts = filterItems.sort((a, b) => b.publishedAt - a.publishedAt);
             setItemsInitial(posts);
         } else {
             setItemsInitial([..._initial]);
         }
     }
 
-    //Funtion Order By data
+    //::Funtion Order By DESC and ASC
     function handleSelectOrderBy(orderby: string) {
         let orderByPost: PostAuthorModel[];
 
@@ -134,7 +138,3 @@ const Home = () => {
 };
 
 export default Home;
-
-/*
-
-    */

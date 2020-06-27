@@ -1,31 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import {useEffect } from 'react';
 
-//API's external 
-import { POST_URL, AUTHOR_URL } from '../consts/api'
-
-//::Interface
-import { Author } from '../interfaces/author';
-//import { Post } from '../interfaces/post';
-import { PostAuthor } from '../interfaces/postAuthor';
+//::Model's
 import PostAuthorModel from '../models/postAuthorModel';
 
-//::Service
+//::Repositories
 import { AuthorRepository } from '../repositories/AuthorRespository';
 import { PostRepository } from '../repositories/PostRespository';
 
 export class PostAuthorService {
 
+    //:: This class setting information POSTS and Authores
+    //:: import modules repositories (Author and Post) 
     getAllPostAuthorService = function (): PostAuthorModel[] {
 
+        //::Const's - Instance Class's
         const authorRepository = new AuthorRepository();
-        let authors = authorRepository.getAllAuthorRepository();
-
         const postRepository = new PostRepository();
+
+        //::Let's import's functions ans Array
+        let authors = authorRepository.getAllAuthorRepository();       
         let posts = postRepository.getAllPostsRepository();
-        let arr: Array<PostAuthorModel> = [];
+        let postsAuthors: Array<PostAuthorModel> = [];
 
         useEffect(() => {
+            //:: GET o ID Author(post) and ID Author(author)
+            //:: AND SET NAME AUTHOR, TITLE, BODY, PUBLISHEDAT 
             posts.map(item => {
                 authors.map(author => {
                     if (item.metadata.authorId === author.id) {
@@ -36,40 +35,15 @@ export class PostAuthorService {
                             author.name,
                             author.id
                         );
-                        arr.push(pTeste);
-
-
+                        postsAuthors.push(pTeste);
                     }
                 })
             });
-        }, [arr]);
+        }, [postsAuthors]);
 
-        return arr;
+        //::only return because, use this information 
+        //:: View... 
+        return postsAuthors;
     }
 
 }
-
-
-/*    //Declaration const
-    const [posts, setPosts] = useState<PostAuthor[]>([]);
-    const authorService = new AuthorService();
-    //const authors = authorService.getAllAuthor();
-
-    //GET API POST(PUBLISHES)
-    /*useEffect(() => {
-        axios.get<PostAuthor[]>(POST_URL)
-            .then(response => {
-                //Find Metedata ID Autor with AuthorID
-                //Case find the same ID, return Author Name
-                response.data.forEach(item => {
-                    authors.forEach(author => {
-                        if (item.metadata.authorId === author.id) {
-                            item.authorName = author.name;
-                        }
-                    })
-                });
-                const sumary = response.data
-                    .sort((a, b) => b.metadata.publishedAt - a.metadata.publishedAt);
-                setPosts([...sumary]);
-            });
-    }, [authors]);*/
