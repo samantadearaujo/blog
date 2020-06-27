@@ -8,30 +8,22 @@
 * :white_check_mark: Ordenar publicações
 * :white_check_mark: Teste Jest
 
-<img width="400" src="https://github.com/samantadearaujo/blog/blob/master/__images__/app_fun.gif" />
+<img width="400" src="__images__/app_fun.gif" />
 
-##Tecnologia
-:rocket:ReactJS - TypeScript 
+:rocket: Tecnologia 
+ReactJS - TypeScript 
 
-<h4>
-:construction_worker:
-Dificuldade:
-</h4>
-<p>
-</p>
+:construction_worker: Dificuldade:
 
-<h4>
+
 :green_heart:
-</h4>
-<p>
-</p>
-
-##WebPack
-:package:
 
 
-#Test Jest
-:see_no_evil:
+:package: WebPack
+
+
+
+:see_no_evil: Test Jest
 
 
 <h4>
