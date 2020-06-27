@@ -7,35 +7,38 @@
 * :white_check_mark: Filtro por autor
 * :white_check_mark: Ordenar publicações
 * :white_check_mark: Teste Jest
+* :white_check_mark: WebPack
 
-<img width="400" src="__images__/app_fun.gif" />
+<img width="300" height="250" src="https://raw.githubusercontent.com/samantadearaujo/blog/master/__images__/app_fun.gif?token=ANYD2BDC7KU3XKLKY4F2PMC662WDU" />
 
 :rocket: Tecnologia 
 ReactJS - TypeScript 
 
 :construction_worker: Dificuldade:
+Em 2015 a 2017, trabalhei no projeto da HP, com o AngularJS. Depois 
+disso vim para Portugal, e até em então estou só trabalhando com o 
+WindowsForm (apenas em BackEnd C#). 
+E sinceramente já não aguento mais...Fiz um curso pela RokeaSet de uma semana e estou estudando a documentação do ReactJS. 
+E nessa prova preferi aplicar o ReactJS / TypeScript, porque estou apaixonada com a biblioteca e cada dia estudando mais e mais. 
+Enfim sei que preciso melhorar no conceito/uso do useEffect e do useState, mesmo sendo os conceitos mais básicos. 
+Tentei aplicar o Design Pattern Factory com o (Models, Repositories
+e Services), mas sei que precisa ser mais estruturado. 
+
+E pela primeira fiz o uso Jest, para testes. Mesmo aplicando o teste apenas a uma função. 
 
 
 :green_heart:
+Desafios, provas e testes foram feitos para medir o seu nível, 
+e sinceramente é adoro. 
 
-
-:package: WebPack
-
-
-
-:see_no_evil: Test Jest
-
-
-<h4>
 :card_file_box: Estrutura
-</h4>
-<p>
-* interfaces - <i> é usado para o repositorios.</i>
-* models - <i> é a unificação, para ser usado no services</i>
-* repositories - <i> Neste modulo coloquei o get para api externa.</i>
-* services - <i> Já neste modulo é a união daos repositorios Posts e  Autores</i>
-* pages/home - <i> Apresentação da tela</>
-</p>
+
+interfaces - é usado para o repositorios.
+models - é a unificação, para ser usado no services.
+repositories - Neste modulo coloquei o get para api externa.
+services -Já neste modulo é a união daos repositorios Posts e  Autores.
+pages/home - Apresentação da tela
+
 
 web-post
 ├─ TODO
