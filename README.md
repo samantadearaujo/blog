@@ -1,4 +1,4 @@
-# API's  Publishes (Prova AXUR.com)
+# API's  Publishes 
 
 ##Descrição
 
